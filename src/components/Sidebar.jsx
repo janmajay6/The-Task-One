@@ -22,7 +22,7 @@ const linkData = [
     icon: <MdDashboard />,
   },
   {
-    label: "Tasks",
+    label: "Task",
     link: "task",
     icon: <FaTasks />,
   },
