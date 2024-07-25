@@ -23,8 +23,8 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: rgb(37, 153, 203);
-  box-shadow: 4px -40px 60px 5px rgb(37, 203, 98) inset;
+  background: #FFFFFF;
+  box-shadow: 4px -40px 60px 5px #378B29 inset;
 }
 
 .rotate-in-up-left {

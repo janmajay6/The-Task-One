@@ -2,10 +2,12 @@ import React, { useEffect } from 'react'
 import {useForm} from "react-hook-form"
 import { useNavigate } from 'react-router-dom';
 import Textbox from '../components/Textbox';
+import Button from '../components/Button';
+import { useSelector } from 'react-redux';
 
 
 const Login = () => {
-  const user = "";
+  const {user} = useSelector((state)=> state.auth);
   const {
     register,
     handleSubmit, 
@@ -16,7 +18,8 @@ const Login = () => {
 
   const submitHandler = async(data)=>{
     console.log("submit");
-  }
+  };
+  console.log(user);
 
 
   useEffect(()=>{
@@ -78,7 +81,24 @@ const Login = () => {
         })}
         error={errors.email ? errors.email.message: ""}
       />
+       <Textbox
+        placeholder="your password"
+        type="password"
+        name="password"
+        label="Password"
+        className= "w-full rounded-full"
+        register={register("password",{
+          required:"Password is required!"
+        })}
+        error={errors.email ? errors.email.message: ""}
+      />
 
+      <span className='text-sm text-gray-500 hover:text-green-600 hover:underline cursor-pointer'> Forget Password?</span>
+      <Button 
+        type='submit'
+        label='submit'
+        className="w-full h-10 bg-green-700 text-white rounded-full"
+      />
      
   </div>
 
